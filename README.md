@@ -5,7 +5,7 @@ Provision an instance of [Ghost](https://github.com/TryGhost/Ghost) on Kubernete
 This will create a single pod running Ghost using a persistent disk for the content, and a
 load balancer for the service.
 
-A certificate is not provisioned. You will need to configure one for yourself on the load balancer.
+A certificate is not provisioned. You will need to configure one yourself on the load balancer.
 
 ## Required variables
 
