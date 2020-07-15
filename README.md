@@ -1,4 +1,4 @@
-# ghost-terrform
+# ghost-terraform
 
 Provision an instance of [Ghost](https://github.com/TryGhost/Ghost) on Kubernetes using Terraform.
 
@@ -17,5 +17,7 @@ Check out `variables.tf` for other variables that can be changed.
 
 ## TODO
 
-More flexibility in deployment, e.g. allow specifying different storage types, and play nicely with
+* More flexibility in deployment, e.g. allow specifying different storage types, and play nicely with
 ingress controllers instead of provisioning a load balancer.
+
+* Allow selecting an existing namespace instead of creating one.
