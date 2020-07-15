@@ -69,7 +69,7 @@ resource "kubernetes_service" "ghost" {
       name        = "http"
       protocol    = "TCP"
       port        = 80
-      target_port = "2368"
+      target_port = 2368
     }
     selector = {
       "app.kubernetes.io/name" = "ghost"
@@ -95,7 +95,7 @@ resource "kubernetes_ingress" "ghost" {
           path = "/"
           backend {
             service_name = var.name
-            service_port = "80"
+            service_port = 80
           }
         }
       }
@@ -153,8 +153,8 @@ resource "kubernetes_deployment" "ghost" {
           image = var.image_name
           port {
             name           = "http"
-            container_port = 2368
             protocol       = "TCP"
+            container_port = 2368
           }
           env {
             name  = "url"
@@ -177,7 +177,7 @@ resource "kubernetes_deployment" "ghost" {
           readiness_probe {
             http_get {
               path   = "/"
-              port   = "2368"
+              port   = 2368
               scheme = "HTTP"
             }
             initial_delay_seconds = 5
