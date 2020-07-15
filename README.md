@@ -19,4 +19,4 @@ Check out `variables.tf` for other variables that can be changed.
 ## TODO
 
 More flexibility in deployment, e.g. allow specifying different storage types, and play nicely with
-nginx ingress controller instead of provisioning a load balancer.
+ingress controllers instead of provisioning a load balancer.
