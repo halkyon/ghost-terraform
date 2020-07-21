@@ -151,6 +151,7 @@ resource "kubernetes_deployment" "ghost" {
         container {
           name  = "ghost"
           image = var.image_name
+          image_pull_policy = var.image_pull_policy
           port {
             name           = "http"
             protocol       = "TCP"
@@ -186,7 +187,6 @@ resource "kubernetes_deployment" "ghost" {
             success_threshold     = 1
             failure_threshold     = 3
           }
-          image_pull_policy = var.image_pull_policy
           security_context {
             capabilities {
               drop = ["ALL"]
@@ -196,7 +196,6 @@ resource "kubernetes_deployment" "ghost" {
             run_as_non_root = true
           }
         }
-        service_account_name = var.name
         security_context {
           fs_group = 10001
         }
