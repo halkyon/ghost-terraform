@@ -142,6 +142,7 @@ resource "kubernetes_deployment" "ghost" {
         }
       }
       spec {
+        service_account_name = var.name
         volume {
           name = "content"
           persistent_volume_claim {
@@ -149,10 +150,9 @@ resource "kubernetes_deployment" "ghost" {
           }
         }
         container {
-          name                 = "ghost"
-          image                = var.image_name
-          image_pull_policy    = var.image_pull_policy
-          service_account_name = var.name
+          name              = "ghost"
+          image             = var.image_name
+          image_pull_policy = var.image_pull_policy
           port {
             name           = "http"
             protocol       = "TCP"
