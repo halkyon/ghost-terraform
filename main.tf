@@ -149,9 +149,9 @@ resource "kubernetes_deployment" "ghost" {
           }
         }
         container {
-          name  = "ghost"
-          image = var.image_name
-          image_pull_policy = var.image_pull_policy
+          name                 = "ghost"
+          image                = var.image_name
+          image_pull_policy    = var.image_pull_policy
           service_account_name = var.name
           port {
             name           = "http"
